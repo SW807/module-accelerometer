@@ -5,5 +5,12 @@
         android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
 
     </application>
+    <service
+        android:name="AccService"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/accservice"
+        android:process=":my_process"
+        android:exported="true">
+    </service>
 
 </manifest>
