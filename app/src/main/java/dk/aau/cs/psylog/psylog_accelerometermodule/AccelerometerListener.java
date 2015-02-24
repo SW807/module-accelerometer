@@ -15,7 +15,7 @@ public class AccelerometerListener implements SensorEventListener {
     public AccelerometerListener(Context context) {
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensorManager.registerListener(this,mSensor,2000000);
+        mSensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
