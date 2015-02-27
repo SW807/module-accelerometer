@@ -6,8 +6,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
+import dk.aau.cs.psylog.module_lib.ISensor;
 
-public class AccelerometerListener implements SensorEventListener {
+public class AccelerometerListener implements SensorEventListener, ISensor {
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
