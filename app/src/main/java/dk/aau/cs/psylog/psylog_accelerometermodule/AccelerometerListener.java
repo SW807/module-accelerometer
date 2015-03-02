@@ -1,6 +1,7 @@
 package dk.aau.cs.psylog.psylog_accelerometermodule;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +13,8 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
+
+    private int sensorDelay;
 
     public AccelerometerListener(Context context) {
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
@@ -35,10 +38,15 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
 
     public void startSensor()
     {
-        mSensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this,mSensor,sensorDelay);
     }
 
     public void stopSensor() {
         mSensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public void sensorParameters(Intent intent) {
+        sensorDelay = intent.getIntExtra("sensorDelay",3); //default set to the slowest update
     }
 }
