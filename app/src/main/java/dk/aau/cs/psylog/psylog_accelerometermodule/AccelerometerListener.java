@@ -38,6 +38,7 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
 
     public void startSensor()
     {
+        mSensorManager.unregisterListener(this);
         mSensorManager.registerListener(this,mSensor,sensorDelay);
     }
 
