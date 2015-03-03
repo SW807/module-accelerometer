@@ -48,6 +48,6 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
 
     @Override
     public void sensorParameters(Intent intent) {
-        sensorDelay = intent.getIntExtra("sensorDelay",3); //default set to the slowest update
+        sensorDelay = intent.getIntExtra("sensorDelay", SensorManager.SENSOR_DELAY_NORMAL); //default set to the slowest update
     }
 }
