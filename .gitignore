@@ -1,11 +1,3 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-
-
 #built application files
 *.apk
 *.ap_
@@ -34,7 +26,6 @@ Thumbs.db
 .project
 
 # Android Studio
-.idea
-#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
-.gradle/
+.gradle
 build/
+*.iml
