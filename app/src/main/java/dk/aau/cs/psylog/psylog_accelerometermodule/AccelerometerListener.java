@@ -1,11 +1,15 @@
 package dk.aau.cs.psylog.psylog_accelerometermodule;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.Uri;
 import android.util.Log;
 import dk.aau.cs.psylog.module_lib.ISensor;
 
@@ -15,10 +19,13 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
     private Sensor mSensor;
 
     private int sensorDelay;
+    ContentResolver cr;
 
     public AccelerometerListener(Context context) {
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        cr = context.getContentResolver();
     }
 
     @Override
