@@ -1,0 +1,14 @@
+{
+  "name": "accelerometer",
+  "_version": 1.0,
+  "tables": [
+    {
+      "name": "accelerations",
+      "columns": [
+        { "name": "accX", "dataType": "REAL", "_unit": "g"},
+        { "name": "accY", "dataType": "REAL", "_unit": "g"},
+        { "name": "accZ", "dataType": "REAL", "_unit": "g"}
+      ]
+    }
+  ]
+}
