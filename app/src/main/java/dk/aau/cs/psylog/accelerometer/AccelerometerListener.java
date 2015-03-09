@@ -1,15 +1,12 @@
-package dk.aau.cs.psylog.psylog_accelerometermodule;
+package dk.aau.cs.psylog.accelerometer;
 
 import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.net.Uri;
 import android.util.Log;
 import dk.aau.cs.psylog.module_lib.ISensor;
 

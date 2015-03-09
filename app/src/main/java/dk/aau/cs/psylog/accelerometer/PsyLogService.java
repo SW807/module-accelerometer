@@ -1,4 +1,4 @@
-package dk.aau.cs.psylog.psylog_accelerometermodule;
+package dk.aau.cs.psylog.accelerometer;
 
 import dk.aau.cs.psylog.module_lib.SuperService;
 
