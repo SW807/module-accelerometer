@@ -35,6 +35,7 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
             values.put("accX", sensorEvent.values[0]);
             values.put("accY", sensorEvent.values[1]);
             values.put("accZ", sensorEvent.values[2]);
+            cr.insert(uri, values);
         }
     }
 
