@@ -1,12 +1,14 @@
 package dk.aau.cs.psylog.accelerometer;
 
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.Uri;
 import android.util.Log;
 import dk.aau.cs.psylog.module_lib.ISensor;
 
@@ -28,11 +30,11 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float x = sensorEvent.values[0],
-                    y = sensorEvent.values[1],
-                    z = sensorEvent.values[2];
-
-            Log.i("AccReadings", "x:" + x + " y:" + y + " z:" + z);
+            Uri uri = Uri.parse("content://dk.aau.cs.psylog.psylog" + "/accelerations");
+            ContentValues values = new ContentValues();
+            values.put("accX", sensorEvent.values[0]);
+            values.put("accY", sensorEvent.values[1]);
+            values.put("accZ", sensorEvent.values[2]);
         }
     }
 
