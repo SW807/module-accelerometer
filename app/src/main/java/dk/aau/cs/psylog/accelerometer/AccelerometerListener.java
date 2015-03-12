@@ -10,6 +10,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.util.Log;
+import dk.aau.cs.psylog.module_lib.DBAccessContract;
 import dk.aau.cs.psylog.module_lib.ISensor;
 
 public class AccelerometerListener implements SensorEventListener, ISensor {
@@ -30,7 +31,7 @@ public class AccelerometerListener implements SensorEventListener, ISensor {
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            Uri uri = Uri.parse("content://dk.aau.cs.psylog.psylog" + "/accelerations");
+            Uri uri = Uri.parse(DBAccessContract.DBACCESS_CONTENTPROVIDER + "accelerations");
             ContentValues values = new ContentValues();
             values.put("accX", sensorEvent.values[0]);
             values.put("accY", sensorEvent.values[1]);
