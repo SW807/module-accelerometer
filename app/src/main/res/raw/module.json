@@ -1,7 +1,7 @@
 {
   "name": "accelerometer",
   "_version": 1.0,
-  "_description":"Measures and stores acceleration in along three axes."
+  "_description":"Measures and stores acceleration in along three axes.",
   "tables": [
     {
       "name": "accelerations",
