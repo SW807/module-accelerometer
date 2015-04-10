@@ -1,5 +1,6 @@
 {
   "name": "accelerometer",
+  "_userfriendlyname": "Accelerometer",
   "_version": 1.0,
   "_description":"Måler og opbevarer acceleration i tre akser.",
   "tables": [
